@@ -1,0 +1,12 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^.*\.RData$
+^.*\.Rhistory$
+^devtools_history\.R$
+^\.gitlab-ci\.yml$
+^_pkgdown\.yml$
+^docs$
+^public$
+^pkgdown$
+^doc$
+^Meta$

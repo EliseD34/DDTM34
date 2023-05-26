@@ -1,0 +1,50 @@
+image: git-registry.lab.sspcloud.fr/metric-osrm/metric-osrm-images:4.3.0
+
+#before_script:
+#  - apt-get update && apt-get -y upgrade
+#  - apt-get -y install libharfbuzz-dev
+#  - apt-get -y install libfribidi-dev
+#  - R -e 'install.packages("pkgdown", dependencies = TRUE)'
+#  - R -e 'install.packages("withr", dependencies = TRUE)'
+
+variables:
+    PKG_NAME: "metric.osrm"
+
+stages:
+  - build
+  - test
+  - deploy
+
+building:
+  stage: build
+  script:
+    - R -e 'devtools::check(check_dir = ".", error_on  = "error", document  = FALSE, manual = FALSE, cran = FALSE)'
+  artifacts:
+        paths:
+            - "${PKG_NAME}_*.tar.gz"
+#  only:
+#    - master
+
+testing:
+    stage: test
+    allow_failure: true
+    when: on_success
+    script:
+        - Rscript -e 'devtools::test()'
+#    only:
+#        - master
+        
+pages:
+    stage: deploy
+    dependencies:
+        - testing
+    script:
+       - Rscript -e 'pkgdown::build_site()'
+       - Rscript -e 'covr::gitlab(file = "public/coverage.html", quiet = FALSE)'
+    coverage: '/metric.osrm Coverage: \d+\.\d+\%/'
+    artifacts:
+        paths:
+            - public
+    only:
+        - master
+        

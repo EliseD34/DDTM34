@@ -1,0 +1,17 @@
+.Rproj.user
+.Rproj
+.Rhistory
+.RData
+.Ruserdata
+docs
+public
+metric.osrm.Rproj
+metric-osrm-package.Rproj
+.Rproj.user/shared/notebooks
+inst/doc
+.Check
+.Rcheck
+vignettes/pdf
+vignettes/html
+/doc/
+/Meta/

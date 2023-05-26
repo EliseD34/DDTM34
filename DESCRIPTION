@@ -1,0 +1,57 @@
+Package: metric.osrm
+Type: Package
+Title: Distancier Metric OSRM
+Version: 1.1.3
+Authors@R: 
+    c(person(family = "PSAR-AT Unité CED - INSEE PACA",
+             role = c("aut", "cre"),
+             email = "dr13-psar-at@insee.fr"),
+      person(family = "SED - DR Hauts-de-France - INSEE",
+             role = "ctb"),
+      person(family = "SED - DR Normandie - INSEE",
+             role = "ctb"),
+      person(family = "SED - DR Bourgogne-Franche-Comté - INSEE",
+             role = "ctb"),
+      person(family = "Institut national de la statistique et des études économiques",
+             role = "cph"),
+      person(given = "Timothée",
+             family = "Giraud",
+             role = "cph",
+             comment = c(ORCID="0000-0002-1932-3323", "Multiple code snippets, from osrm package")))
+Maintainer: PSAR-AT Unité CED <dr13-psar-at@insee.fr>
+Description: Calculs de temps et distances depuis un serveur OSRM. Temps d'acces, accessibilite et isochrones.
+Depends: R (>= 3.4.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    methods,
+    sf (>= 0.9.0),
+    shiny,
+    dplyr,
+    leaflet,
+    rio,
+    gepaf,
+    classInt,
+    RJSONIO,
+    isoband,
+    RANN,
+    progress,
+    rlang,
+    stringr
+RoxygenNote: 7.2.3
+Suggests: 
+    testthat (>= 3.0.0),
+    covr,
+    pkgdown,
+    markdown,
+    rmarkdown,
+    knitr,
+    readODS,
+    rgdal,
+    oceanis,
+    sp
+BugReports: https://git.lab.sspcloud.fr/metric-osrm/metric-osrm-package/-/issues
+VignetteBuilder: 
+    knitr
+Config/testthat/edition: 3

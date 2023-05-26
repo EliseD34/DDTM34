@@ -1,0 +1,43 @@
+template:
+  params:
+    bootswatch: cosmo
+
+destination: public
+
+navbar:
+  title: "metric.osrm"
+  structure:
+    left:  [home, reference, articles, news]
+    right: [gitlab]
+  components:
+    gitlab:
+      icon: fab fa-gitlab fa-lg
+      href: https://git.lab.sspcloud.fr/metric-osrm/metric-osrm-package
+
+home:
+  links:
+  - text: Browse source code
+    href: https://git.lab.sspcloud.fr/metric-osrm/metric-osrm-package
+
+reference:
+- title: Préparation des données
+  desc:  Des fonctions pour récupérer des coordonnées en WGS84 (epsg 4326), compatibles avec OSRM.
+  contents:
+  - adresseToCoord
+  - codeComToCoord
+  - codeLauToCoord
+  - convertTo
+- title: Fonctions de calculs vers le service OSRM
+  desc:  Des fonctions pour requêter le service OSRM (table, route, isochrone)
+  contents:
+  - metricOsrmTable
+  - metricOsrmRoute
+  - metricOsrmIso
+- title: Visualisation des résultats
+  desc:  Des fonctions pour calculer des indicateurs et créer des cartes pour la visualisation des résultats
+  contents:
+  - statTable
+  - indTableSrcDst
+  - indIsoSpatial
+  - mapRoutes
+  - mapRoutesProp
